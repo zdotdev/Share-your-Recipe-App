@@ -2,13 +2,13 @@ import express from 'express'
 import mongoose from 'mongoose'
 import dotenv from 'dotenv'
 import cors from 'cors'
+import router from '../routes/receipt-router.js'
 
 const app = express()
 dotenv.config()
 
 app.use(express.json())
 app.use(cors())
-
 
 mongoose.connect(`mongodb+srv://${process.env.MONGODB_USERNAME}:${process.env.MONGODB_PASSWORD}@cluster0.fmp4jpf.mongodb.net/?retryWrites=true&w=majority`)
 .then(() => {
@@ -20,3 +20,5 @@ mongoose.connect(`mongodb+srv://${process.env.MONGODB_USERNAME}:${process.env.MO
 .catch((err) => {
     console.log(err)
 })
+
+app.use("/dish", router)
