@@ -3,14 +3,15 @@
   "version": "1.0.0",
   "description": "",
   "main": "main.js",
-  "type":"module",
+  "type": "module",
   "scripts": {
-    "devStart": "nodemon server.js"
+    "devStart": "nodemon ./server/server.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "cors": "^2.8.5",
     "dotenv": "^16.4.1",
     "express": "^4.18.2",
     "mongoose": "^8.1.1"
