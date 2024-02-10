@@ -19,3 +19,27 @@ async function getAllDishes(){
     }
 }
 getAllDishes()
+
+document.getElementById("add-receipt-button").onclick = () => {
+    const data = {
+        dishName: document.getElementById("dish-name").value,
+        dishIngredients: document.getElementById("dish-ingredients").value,
+        dishProcedure: document.getElementById("dish-procedure").value
+    }
+
+    addNewReceipt(data)
+}
+
+async function addNewReceipt(newReceipt){
+    try{
+        const data = await fetch("http://localhost:3000/dish/addReceipt", {
+            method: "POST",
+            headers: {"Content-Type": "application/json"},
+            body: JSON.stringify(newReceipt)
+        })
+        console.log(await data.json())
+    }
+    catch(err){
+        console.log(err);
+    }
+}
