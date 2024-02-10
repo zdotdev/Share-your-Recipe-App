@@ -1,16 +1,18 @@
-function testing(data){
+function card(data){
     Object.values(data.dishes).forEach(dish => {
-        document.getElementById("main").innerHTML += `<h1>${dish.dishName}</h1>`
-        console.log(`Dish Name: ${dish.dishName}`);
+        document.getElementById("section").innerHTML += `
+        <div class="card">
+        <h2 class="dish-name">${dish.dishName}</h2>
+        <p class="dish-procedure">${dish.dishProcedure}</p>
+    </div>`
     });
 }
-
 
 async function getAllDishes(){
     try{
         const data = await fetch("http://localhost:3000/dish")
         const dishName = await data.json()
-        testing(dishName)
+        card(dishName)
     }
     catch(err){
         console.log(err)

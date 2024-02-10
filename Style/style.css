@@ -1,3 +1,89 @@
-p{
-    color: red;
+*,
+*::before,
+*::after{
+    content: none; 
+    box-sizing: border-box;
+}
+
+html,
+body{
+    margin: 0;
+    padding: 0;
+    font-size: 15px;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* start here */
+body{
+    width: auto;
+    height: 100vh;
+    background-color: hsl(0, 0%, 95%);
+    
+    
+}
+main{
+    background-color: aqua;
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 8rem;
+}
+
+section{
+    background-color: aquamarine;
+    height: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 8rem;
+}
+
+.card{
+    width: 26rem;
+    height: fit-content;
+    padding: 2rem;
+    /* border-radius: 2rem; */
+
+    border-radius: 50px;
+    background: #e0e0e0;
+    box-shadow:  20px 20px 60px #bebebe, -20px -20px 60px #ffffff;
+}
+
+.edit-div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.edit-input{
+    width: 100%;
+}
+
+.add-div{
+    margin: 2rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.add-receipt-title{
+    font-size: 4rem;
+    line-height: 0;
+
+}
+.add-receipt-button{
+    padding: .8rem 1rem;
+}
+
+
+.dish-description{
+    line-height: 0;
+}
+
+.dish-name{
+    font-size: 2rem;
+    line-height: .8rem;
 }
