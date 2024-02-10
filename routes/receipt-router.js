@@ -6,7 +6,7 @@ const router = express.Router()
 router.get("/", getAllReceipt)
 router.get("/:id", getReceipt)
 router.post("/addReceipt", addReceipt)
-// router.put("/editReceipt", editReceipt)
-// router.delete("/deleteReceipt", deletReceipt)
+router.put("/editReceipt/:id", editReceipt)
+router.delete("/deleteReceipt/:id", deletReceipt)
 
 export default router

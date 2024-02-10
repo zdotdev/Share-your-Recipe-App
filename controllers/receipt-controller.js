@@ -51,9 +51,38 @@ export const addReceipt = async(req, res) => {
 }
 
 export const editReceipt = async(req, res) => {
+    const {dishName, dishIngredients, dishProcedure} = req.body
+    const id = req.params.id
+    let dishes
 
+    try{
+        dishes = await Dish.findByIdAndUpdate(id, {
+            dishName,
+            dishIngredients,
+            dishProcedure
+        })
+    }
+    catch(err){
+        return console.log(err)
+    }
+    if(!dishes){
+        return res.status(500).json({error: "Can't update the Dish"})
+    }
+    return res.status(200).json({dishes})
 }
 
 export const deletReceipt = async(req, res) => {
+    const id = req.params.id
+    let dishes
 
+    try{
+        dishes = await Dish.findByIdAndDelete(id)
+    }
+    catch(err){
+        return console.log(err)
+    }
+    if(!dishes){
+        return res.status(404).json({error: "No Dishes found"})
+    }
+    return res.status(200).json({dishes})
 }
