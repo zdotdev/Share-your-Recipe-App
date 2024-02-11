@@ -2,9 +2,10 @@ function card(data){
     Object.values(data.dishes).forEach(dish => {
         document.getElementById("section").innerHTML += `
         <div class="card">
-        <h2 class="dish-name">${dish.dishName}</h2>
-        <p class="dish-procedure">${dish.dishProcedure}</p>
-    </div>`
+            <h2 class="dish-name">${dish.dishName}</h2>
+            <i class="dish-ingredients">${dish.dishIngredients}</i  >
+            <p class="dish-procedure">${dish.dishProcedure}</p>
+        </div>`
     });
 }
 
@@ -28,6 +29,7 @@ document.getElementById("add-receipt-button").onclick = () => {
     }
 
     addNewReceipt(data)
+    location.reload()
 }
 
 async function addNewReceipt(newReceipt){
