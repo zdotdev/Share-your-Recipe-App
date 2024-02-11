@@ -26,7 +26,7 @@
             
             <div>
                 <h2 class="dish-description">Dish ingredients:</h2>
-                <input type="text" id="dish-ingredients">
+                <textarea name="dish-ingredients" id="dish-ingredients" cols="30" rows="10" placeholder="Add ingredients here"></textarea>
             </div>
 
             <div>
@@ -36,6 +36,18 @@
             <button class="add-receipt-button" id="add-receipt-button">Submit</button>
         </div>
     </main>
+    <div>
+        <input type="text" id="delete-input">
+        <button id="delete-button">delete</button>
+    </div>
+
+    <div>
+        <input type="text" id="edit-dishID">
+        <input type="text" id="edit-dishName">
+        <input type="text" id="edit-dishIngredients">
+        <input type="text" id="edit-dishProcedure">
+        <button id="edit-button">Edit</button>
+    </div>
     
     <script src="./JS/main.js"></script>
 </body>

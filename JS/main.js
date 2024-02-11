@@ -45,3 +45,47 @@ async function addNewReceipt(newReceipt){
         console.log(err);
     }
 }
+
+document.getElementById("delete-button").onclick = () => {
+    const id = document.getElementById("delete-input").value
+    deleteReceipt(id)
+}
+
+async function deleteReceipt(receiptID){
+    try{
+        const data = await fetch(`http://localhost:3000/dish/deleteReceipt/${receiptID}`,{
+            method: "DELETE",
+            headers:{"Content-Type": "application/json"},
+            body: ""
+        })
+        console.log(await data.json());
+    }
+    catch(err){
+        console.log(err)
+    }
+}
+
+document.getElementById("edit-button").onclick = () => {
+    const id = document.getElementById("edit-dishID").value
+    const data = {
+        dishName: document.getElementById("edit-dishName").value,
+        dishIngredients: document.getElementById("edit-dishIngredients").value,
+        dishProcedure: document.getElementById("edit-dishProcedure").value
+    }
+    editReceipt(id, data)
+    location.reload()
+}
+
+async function editReceipt(editedReceiptID, editedReceiptData){
+    try{
+        const data = await fetch(`http://localhost:3000/dish/editReceipt/${editedReceiptID}`, {
+            method: "PUT",
+            headers: {"Content-Type": "application/json"},
+            body: JSON.stringify(editedReceiptData)
+        })
+        console.log(await data.json())
+    }
+    catch(err){
+        console.log(err)
+    }
+}
