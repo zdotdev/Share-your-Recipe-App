@@ -3,8 +3,7 @@ function card(data){
         document.getElementById("section").innerHTML += `
         <div class="card">
             <h2 class="dish-name">${dish.dishName}</h2>
-            <i class="dish-ingredients">${dish.dishIngredients}</i  >
-            <p class="dish-procedure">${dish.dishProcedure}</p>
+            <p class="dish-procedure">${dish.dishProcedure.slice(0, 200)}...</p>
         </div>`
     });
 }

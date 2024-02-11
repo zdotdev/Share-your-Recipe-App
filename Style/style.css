@@ -22,7 +22,6 @@ body{
     
 }
 main{
-    background-color: aqua;
     width: 100%;
     height: auto;
     display: flex;
@@ -33,7 +32,6 @@ main{
 }
 
 section{
-    background-color: aquamarine;
     height: fit-content;
     display: flex;
     align-items: center;
@@ -49,7 +47,7 @@ section{
     /* border-radius: 2rem; */
 
     border-radius: 50px;
-    background: #e0e0e0;
+    background: #a8a8a8;
     box-shadow:  20px 20px 60px #bebebe, -20px -20px 60px #ffffff;
 }
 
