@@ -1,0 +1,54 @@
+*,
+::before,
+::after{
+    content: none;
+    box-sizing: border-box;
+}
+
+html,
+body{
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+    font-size: 15px;
+    font-family: "Poppins", sans-serif;
+    line-height: 0;
+}
+
+/* start */
+section{
+    display: flex;
+}
+.delete-dish-area,
+.edit-dish-area,
+.add-dish-area{
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 1.4rem;
+}
+#edit-dish-button,
+#add-dish-button{
+    background-color: rgb(172, 255, 172);
+    padding: 1rem;
+    border-radius: 1.4rem;
+    border-style: none;
+    font-weight: 600;
+    color: gray;
+    box-shadow: .2rem .2rem .8rem gray;
+}
+
+#add-dish-button:is(:hover){
+    background-color: aqua;
+}
+
+textarea{
+    height: 24px;
+    width: 20rem;
+}
+input{
+    width: 20rem;
+}

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin</title>
+    <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+    <h1>Admin Panel</h1>
+    <section>
+        <div class="add-dish-area">
+            <label for="add-dish">Add Dish</label>
+            <input type="text" name="add-dish" id="add-dish-name" placeholder="Dish name">
+            <textarea name="add-dish" id="add-dish-ingredients" cols="30" rows="10" placeholder="Add dish ingredients here"></textarea>
+            <textarea name="add-dish" id="add-dish-procedure" cols="30" rows="10" placeholder="Add dish procedure here"></textarea>
+            <button id="add-dish-button">Add Recipe</button>
+        </div>
+        <div class="edit-dish-area">
+            <label for="edit-dish">Edit Dish</label>
+            <input type="text" name="edit-dish-ID" id="edit-dish-ID" placeholder="Dish ID">
+            <input type="text" name="edit-dish" id="edit-dish-name" placeholder="Edit dish name">
+            <textarea name="edit-dish" id="edit-dish-ingredients" cols="30" rows="10" placeholder="Edit dish ingredients here"></textarea>
+            <textarea name="edit-dish" id="edit-dish-procedure" cols="30" rows="10" placeholder="Edit dish procedure here"></textarea>
+            <button id="edit-dish-button">Edit Recipe</button>
+        </div>
+        <div class="delete-dish-area">
+            <label for="delete-dish-dish">Delete Dish</label>
+            <input type="text" id="delete-dish-ID" placeholder="Input dish ID here">
+            <button id="delete-dish-button">Delete Dish</button>
+        </div>
+    </section>
+
+    <script src="admin.js"></script>
+</body>
+</html>
