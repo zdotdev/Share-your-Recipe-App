@@ -8,10 +8,14 @@ async function editDish(body,   id){
 }
 
 
-const textarea = document.getElementById("add-dish-ingredients")
-textarea.addEventListener("keyup", (scrollHeightValue) => {
-    textarea.style.height = "24px"
-    let scrlHeight = scrollHeightValue.target.scrollHeight
-    // console.log(scrlHeight)
-    textarea.style.height = `${scrlHeight}px`;
-})
+const addDishIngredients = document.getElementById("add-dish-ingredients")
+
+function adjustTextAreaHeight(element){
+    element.addEventListener("keyup", (scrollHeightValue) => {
+        element.style.height = "26px"
+        let scrlHeight = scrollHeightValue.target.scrollHeight
+        // console.log(scrlHeight)
+        element.style.height = `${scrlHeight}px`;
+    })
+}
+adjustTextAreaHeight(addDishIngredients)

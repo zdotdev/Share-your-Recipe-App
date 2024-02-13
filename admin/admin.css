@@ -46,8 +46,9 @@ section{
 }
 
 textarea{
-    height: 24px;
+    height: 26px;
     width: 20rem;
+    overflow-y: hidden;
 }
 input{
     width: 20rem;
