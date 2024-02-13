@@ -35,6 +35,21 @@ async function addDish(newDish){
     }
 }
 
+document.getElementById("edit-dish-name").addEventListener("click", async () => {
+    const dishID = document.getElementById("edit-dish-ID").value
+    try{
+        const data = await fetch(`http://localhost:3000/dish/${dishID}`)
+        const dish = await data.json()
+        document.getElementById("edit-dish-name").value = dish.dishes.dishName
+        document.getElementById("edit-dish-ingredients").value = dish.dishes.dishIngredients
+        document.getElementById("edit-dish-procedure").value = dish.dishes.dishProcedure
+        console.log(data)
+    }
+    catch(err){
+        console.log(err)
+    }
+})
+
 function card(data){
     Object.values(data.dishes).forEach(dish => {
         document.getElementById("data").innerHTML += `
