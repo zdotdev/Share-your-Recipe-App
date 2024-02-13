@@ -21,6 +21,20 @@ async function deleteDish(id){
     }
 }
 
+async function addDish(newDish){
+    try{
+        const data = await fetch("http://localhost:3000/dish/addReceipt", {
+            method: "POST",
+            headers: {"Content-Type" : "application/json"},
+            body: JSON.stringify(newDish)
+        })
+        console.log(await data.json())
+    }
+    catch(err){
+        console.log(err)
+    }
+}
+
 function card(data){
     Object.values(data.dishes).forEach(dish => {
         document.getElementById("data").innerHTML += `
@@ -61,6 +75,15 @@ document.getElementById("edit-dish-button").addEventListener("click", () => {
 document.getElementById("delete-dish-button").addEventListener("click", () => {
     const dishID = document.getElementById("delete-dish-ID").value
     deleteDish(dishID)
+})
+
+document.getElementById("add-dish-button").addEventListener("click", () => {
+    const data = {
+        dishName: document.getElementById("add-dish-name").value,
+        dishIngredients: addDishIngredients.value,
+        dishProcedure: addDishProcedure.value
+    }
+    addDish(data)
 })
 
 const addDishIngredients = document.getElementById("add-dish-ingredients")
