@@ -9,13 +9,18 @@ async function editDish(body,   id){
 
 
 const addDishIngredients = document.getElementById("add-dish-ingredients")
+const addDishProcedure = document.getElementById("add-dish-procedure")
+const editDishIngredients = document.getElementById("edit-dish-ingredients")
+const editDishProcedure = document.getElementById("edit-dish-procedure")
 
 function adjustTextAreaHeight(element){
     element.addEventListener("keyup", (scrollHeightValue) => {
         element.style.height = "26px"
         let scrlHeight = scrollHeightValue.target.scrollHeight
-        // console.log(scrlHeight)
         element.style.height = `${scrlHeight}px`;
     })
 }
 adjustTextAreaHeight(addDishIngredients)
+adjustTextAreaHeight(addDishProcedure)
+adjustTextAreaHeight(editDishIngredients)
+adjustTextAreaHeight(editDishProcedure)
