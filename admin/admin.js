@@ -7,14 +7,25 @@ async function editDish(body, id){
     console.log(await data.json());
 }
 
+function card(data){
+    Object.values(data.dishes).forEach(dish => {
+        document.getElementById("data").innerHTML += `
+        <div class="dish-div">
+            <h2>${dish.dishName}</h2>
+            <h3>${dish._id}</h3>
+            <p>${dish.dishIngredients}</p>
+            <p>${dish.dishProcedure}</p>
+        </div>
+        `
+    });
+}
+
 async function getAllDish(){
     try{
         const data = await fetch("http://localhost:3000/dish")
         let dish = await data.json()
-        document.getElementById("data").innerHTML +=`
-        <h1>${dish.dishes[0]._id}<h1>
-        `
-        console.log(dish.dishes[0]._id);
+        card(dish)
+        console.log(dish);
     }
     catch(err){
         console.log(err)

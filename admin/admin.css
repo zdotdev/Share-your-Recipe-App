@@ -12,7 +12,6 @@ body{
     scroll-behavior: smooth;
     font-size: 15px;
     font-family: "Poppins", sans-serif;
-    line-height: 0;
 }
 
 /* start */
@@ -52,4 +51,12 @@ textarea{
 }
 input{
     width: 20rem;
+}
+#data{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.dish-div{
+    width: 40rem;
 }
