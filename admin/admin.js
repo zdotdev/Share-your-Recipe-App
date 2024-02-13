@@ -7,6 +7,20 @@ async function editDish(body, id){
     console.log(await data.json());
 }
 
+async function deleteDish(id){
+    try{
+        const data = await fetch(`http://localhost:3000/dish/deleteReceipt/${id}`, {
+            method: "DELETE",
+            headers: {"Content-Type": "application/json"},
+            body: ""
+        })
+        console.log(await data.json())
+    }
+    catch(err){
+        console.log(err)
+    }
+}
+
 function card(data){
     Object.values(data.dishes).forEach(dish => {
         document.getElementById("data").innerHTML += `
@@ -42,6 +56,11 @@ document.getElementById("edit-dish-button").addEventListener("click", () => {
         dishProcedure: editDishProcedure.value
     }
     editDish(data, dishID)
+})
+
+document.getElementById("delete-dish-button").addEventListener("click", () => {
+    const dishID = document.getElementById("delete-dish-ID").value
+    deleteDish(dishID)
 })
 
 const addDishIngredients = document.getElementById("add-dish-ingredients")
