@@ -68,7 +68,6 @@ async function getAllDish(){
         const data = await fetch("http://localhost:3000/dish")
         let dish = await data.json()
         card(dish)
-        console.log(dish);
     }
     catch(err){
         console.log(err)
