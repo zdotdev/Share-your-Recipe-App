@@ -60,3 +60,23 @@ input{
 .dish-div{
     width: 40rem;
 }
+.loading-status{
+    width: 14rem;
+    height: 14rem;
+    margin: 8rem;
+    border-radius: 50%;
+    border-bottom: 1rem solid black;
+    border-right: 1rem solid black;
+    border-top: 1rem solid green;
+    border-left: 1rem solid green;
+    animation: loading 2s infinite ease-in-out forwards;
+}
+
+@keyframes loading{
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}

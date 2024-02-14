@@ -51,6 +51,7 @@ document.getElementById("edit-dish-name").addEventListener("click", async () => 
 })
 
 function card(data){
+    document.getElementById("data").innerHTML = ""
     Object.values(data.dishes).forEach(dish => {
         document.getElementById("data").innerHTML += `
         <div class="dish-div">
