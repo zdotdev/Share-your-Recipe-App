@@ -14,3 +14,11 @@ body{
 }
 
 /* start here */
+body{
+    background-color: aqua;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
