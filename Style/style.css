@@ -15,10 +15,22 @@ body{
 
 /* start here */
 body{
-    background-color: aqua;
+    background-color: black;
     height: 100vh;
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
+    background-image: url(../public/img/pexels-curtis-adams-14715771.jpg);
+    background-position: center;
+    background-clip: border-box;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+#main-container{
+    margin-inline: 4rem;
+}
+#dish-container{
 }
