@@ -29,6 +29,39 @@ body{
     background-attachment: fixed;
 }
 
+/* navbar */
+.navbar{
+    display: flex;
+    background-color: hsla(30, 30%, 70%, 60%);
+    width: 100%;
+    justify-content: end;
+    padding-inline: 4rem;
+    padding-block: .8rem;
+    gap: .8rem;
+    position: relative;
+}
+
+.search-button{
+    background-color: transparent;
+    border: none;
+    position: absolute;
+    top: 10px;
+    transition: 1s;
+}
+.search-button:hover{
+    color: antiquewhite;
+}
+.search-input{
+    border: none;
+    border-radius: 16px;
+    font-family: 'Poppins', sans-serif;
+    padding-inline: 1.2rem;
+    
+}
+.search-input:focus{
+    outline: none;
+}
+
 #main-container{
     margin-inline: 4rem;
 }
