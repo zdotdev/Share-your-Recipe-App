@@ -86,3 +86,19 @@ export const deletReceipt = async(req, res) => {
     }
     return res.status(200).json({dishes})
 }
+
+export const getDishByQueryParams = async (req, res) => {
+    const dishNameParams = req.query.name
+    let dish;
+
+    try{
+        dish = await Dish.find({name: dishNameParams})
+    }
+    catch(err){
+        console.log(err)
+    }
+    if(!dish){
+        res.status(404).json({error: "No dish found"})
+    }
+    return res.status(200).json({dish})
+}
