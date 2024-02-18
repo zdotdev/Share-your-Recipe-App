@@ -3,6 +3,8 @@
 *::after{
     content: none; 
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 html,
@@ -105,4 +107,30 @@ body{
     color: hsl(0, 0%, 100%);
     text-shadow: 1px 1px 1px black;
     line-height: 0;
+}
+
+/* dish */
+.dish-container{
+    height: fit-content;
+    width: 100%;
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 2rem;
+}
+
+.card{
+    width: 20rem;
+    height: fit-content;
+    background-color: aqua;
+    padding: 2rem;
+
+    /* glassmorphism */
+    background: hsla(26, 11%, 46%, 60%);
+    box-shadow: 18px 18px 18px #817775;
+    backdrop-filter: blur( 6.5px );
+    -webkit-backdrop-filter: blur( 6.5px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
 }
