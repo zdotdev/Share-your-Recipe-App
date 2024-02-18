@@ -79,17 +79,17 @@ body{
 
 /* hero */
 .main-hero-section{
-    background-color: black;
     height: 100vh;
     width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     background-image: url(../public/img/pexels-curtis-adams-14715771.jpg);
     background-position: center;
     background-clip: border-box;
     background-repeat: no-repeat;
     background-size: cover;
+}
+.carousel-image{
+    width: 50vw;
+    height: 60vh;
 }
 
 /* main */
@@ -98,12 +98,8 @@ body{
     width: 100%;
     padding-inline: 4rem;
     padding-block: 2rem;
-    background:hsla(34, 78%, 91%, 80%);
-}
-.section-container{
-    /* display: flex;
-    flex-direction: column;
-    align-items: center; */
+    /* background:hsla(34, 78%, 91%, 80%); */
+    background: hsl(10, 6%, 80%);
 }
 .title{
     font-size: 24px;
@@ -114,6 +110,12 @@ body{
 }
 
 /* dish */
+.h2-dish-title{
+    font-family: 'Gloria Hallelujah', sans-serif;
+    color: hsl(0, 0%, 100%);
+    font-size: 32px;
+    text-shadow: 0 0 20px black;
+}
 .dish-container{
     height: fit-content;
     width: 100%;
@@ -131,12 +133,12 @@ body{
     background-color: hsla(26, 11%, 90%, 80%);
     box-shadow: 8px 8px 18px #817775;
     border-radius: 8px;
-    border-left: 4px solid gray;
+    border-left: 4px solid hsl(38, 12%, 47%);
 }
 .dish-image{
     height: 12rem;
     width: 100%;
     border-radius: 8px;
-    outline: 2px solid white;
+    outline: 2px solid hsl(0, 0%, 100%);
     box-shadow: 2px 2px 8px black;
 }
