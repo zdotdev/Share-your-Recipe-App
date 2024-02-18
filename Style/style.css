@@ -34,7 +34,7 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: hsla(30, 30%, 70%, 90%);
+    background-color: #dcd9d4;
     width: 100%;
     padding-inline: 4rem;
     padding-block: .8rem;
@@ -102,7 +102,7 @@ body{
 }
 .title{
     font-size: 24px;
-    color: hsl(0, 0%, 0%);
-    text-shadow: 4px 4px 14px hsl(34, 78%, 70%);
+    color: hsl(0, 0%, 100%);
+    text-shadow: 1px 1px 1px black;
     line-height: 0;
 }
