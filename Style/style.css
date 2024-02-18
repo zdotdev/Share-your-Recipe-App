@@ -92,6 +92,23 @@ body{
     height: 60vh;
 }
 
+.hero-transition-div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #dcd9d4;
+    height: 100%;
+}
+.hero-title{
+    font-family: 'Gloria Hallelujah', sans-serif;
+    font-size: 2rem;
+    color:#817775;
+}
+.arrow-image-icon{
+    width: 8rem;
+    height: auto;
+}
+
 /* main */
 .main-dish-container{
     height: fit-content;
