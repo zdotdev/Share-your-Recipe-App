@@ -114,23 +114,28 @@ body{
     height: fit-content;
     width: 100%;
     display: flex;
-    gap: 2rem;
+    gap: 4rem;
     justify-content: center;
     flex-wrap: wrap;
     padding: 2rem;
+    background:hsla(34, 78%, 91%, 80%);
+    backdrop-filter: blur( 6.5px );
+    -webkit-backdrop-filter: blur( 6.5px );
 }
 
 .card{
-    width: 20rem;
+    width: 24rem;
     height: fit-content;
-    background-color: aqua;
     padding: 2rem;
-
-    /* glassmorphism */
-    background: hsla(26, 11%, 46%, 60%);
-    box-shadow: 18px 18px 18px #817775;
-    backdrop-filter: blur( 6.5px );
-    -webkit-backdrop-filter: blur( 6.5px );
-    border-radius: 10px;
-    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    background-color: hsla(26, 11%, 90%, 80%);
+    box-shadow: 8px 8px 18px #817775;
+    border-radius: 8px;
+    border-left: 4px solid gray;
+}
+.dish-image{
+    height: 12rem;
+    width: 100%;
+    border-radius: 8px;
+    outline: 2px solid white;
+    box-shadow: 2px 2px 8px black;
 }
