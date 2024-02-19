@@ -99,7 +99,7 @@ body{
 .hero-p{
     font-family: 'Gloria Hallelujah', sans-serif;
     text-align: center;
-    color: #817775;
+    color: hsl(10, 5%, 48%);
     animation: hero-from-bottom .8s ease-in;
 }
 
@@ -122,12 +122,47 @@ body{
     }   
 }
 
-
-
-.arrow-image-icon{
-    width: 8rem;
-    height: auto;
+.hero-arrow-icon-section{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: -14rem;
+    animation: opacity .6s ease-in;
 }
+
+.hero-arrow-header{
+    font-family: 'Gloria Hallelujah', sans-serif;
+    color: hsl(10, 5%, 48%);
+    font-size: 2rem;
+}
+.arrow-image-icon{
+    width: 4rem;
+    height: auto;
+    animation: arrow-movement .8s ease-in-out infinite forwards;
+}
+
+@keyframes opacity {
+    from{
+        opacity: 0;
+        transform: translateY(4rem);
+    }
+    to{
+        opacity: 1;
+    }
+}
+@keyframes arrow-movement {
+    from{
+        transform: translateY(0);
+    }
+    to{
+        transform: translateY(1.4rem);
+    }
+}
+
+
 
 .image-container{
     position: relative;
