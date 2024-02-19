@@ -59,11 +59,11 @@ window.addEventListener('scroll', function(event) {
     //     navbar.classList.add("normal-pos")
     // }
 
-    let lastScrollTop = 0;
+    let lastScrollTop = document.documentElement.scrollTop;
         window.addEventListener('scroll', function() {
             const currentScroll = document.documentElement.scrollTop;
     
-            console.log(currentScroll);
+            console.log(`${currentScroll.toFixed(2)} : ${lastScrollTop.toFixed(2)}`);
             if (currentScroll > lastScrollTop) {
                 navbar.classList.remove("normal-pos")
                 navbar.classList.add("move-up")
@@ -73,13 +73,13 @@ window.addEventListener('scroll', function(event) {
                     })
                 }
             }
-            else{
+            if(currentScroll < lastScrollTop){
                 navbar.classList.add("normal-pos")
                 navbar.classList.remove("move-up")
             }
             
     
-            lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
-        }, false);
+            lastScrollTop = currentScroll;
+        });
 
 });

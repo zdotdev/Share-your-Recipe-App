@@ -38,20 +38,23 @@ body{
     animation: navbar-move-top .8s ease-out forwards;
 }
 .navbar.normal-pos{
-    animation: normal-position .8s ease-in forwards;
+    animation: normal-position .4s ease-in forwards;
 }
 @keyframes normal-position {
     from{
         transform: translateY(-8rem);
+        opacity: 0;
     }
     to{
         transform: translateY(0);
+        opacity: 1;
     }
 }
 
 @keyframes navbar-move-top {
     to{
         transform: translateY(-8rem);
+        opacity: 0;
     }
 }
 
