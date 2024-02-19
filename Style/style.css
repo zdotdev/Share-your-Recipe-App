@@ -5,6 +5,7 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    scroll-behavior: smooth;
 }
 
 html,
@@ -28,10 +29,32 @@ body{
     padding-inline: 4rem;
     padding-block: .8rem;
     gap: .8rem;
-    position: relative;
+    position: fixed;
+    z-index: 10;
     border-bottom: 2px solid #654133;
     box-shadow: 0rem 0px 2rem 0rem #654133;
 }
+.navbar.move-up{
+    animation: navbar-move-top .8s ease-out forwards;
+}
+.navbar.normal-pos{
+    animation: normal-position .8s ease-in forwards;
+}
+@keyframes normal-position {
+    from{
+        transform: translateY(-8rem);
+    }
+    to{
+        transform: translateY(0);
+    }
+}
+
+@keyframes navbar-move-top {
+    to{
+        transform: translateY(-8rem);
+    }
+}
+
 .navbar-div3,
 .navbar-div2,
 .navbar-div1{
@@ -59,7 +82,7 @@ body{
     font-family: 'Poppins', sans-serif;
     padding-inline: 1.2rem;
     font-family: 'Gloria Hallelujah', sans-serif;
-    box-shadow: 4px 4px 0px #654133;
+    box-shadow: 4px 4px #654133;
 }
 .search-input:focus{
     outline: none;
@@ -131,6 +154,7 @@ body{
     position: absolute;
     top: -14rem;
     animation: opacity .6s ease-in;
+    animation: arrow-movement .8s ease-in-out .8s infinite forwards alternate;
 }
 
 .hero-arrow-header{
@@ -141,7 +165,6 @@ body{
 .arrow-image-icon{
     width: 4rem;
     height: auto;
-    animation: arrow-movement .8s ease-in-out infinite forwards;
 }
 
 @keyframes opacity {
@@ -242,9 +265,9 @@ body{
 /* dish */
 .h2-dish-title{
     font-family: 'Gloria Hallelujah', sans-serif;
-    color: hsl(0, 0%, 100%);
+    color: hsl(17, 33%, 30%);
     font-size: 32px;
-    text-shadow: 0 0 20px black;
+    text-shadow: 0 0 20px hsl(36, 29%, 71%);
 }
 .dish-container{
     height: fit-content;
@@ -254,6 +277,7 @@ body{
     justify-content: center;
     flex-wrap: wrap;
     padding: 2rem;
+    overflow: hidden;
 }
 
 .card{
@@ -264,7 +288,23 @@ body{
     box-shadow: 8px 8px 18px #817775;
     border-radius: 8px;
     border-left: 4px solid hsl(38, 12%, 47%);
+    opacity: 0;
 }
+.card.translate{
+    animation: translate .4s ease-in forwards;
+
+}
+
+@keyframes translate {
+    from{
+        transform: translateY(6rem);
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+
 .dish-image{
     height: 12rem;
     width: 100%;
