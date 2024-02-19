@@ -93,13 +93,37 @@ body{
     font-family: 'Gloria Hallelujah', sans-serif;
     font-size: 2.8rem;
     color: hsl(17, 33%, 20%);
-    margin-top: 4rem;
+    margin-top: 8rem;
+    animation: hero-from-top .8s ease-in;
 }
 .hero-p{
     font-family: 'Gloria Hallelujah', sans-serif;
     text-align: center;
     color: #817775;
+    animation: hero-from-bottom .8s ease-in;
 }
+
+@keyframes hero-from-bottom {
+    from{
+        opacity: 0;
+        transform: translateY(8rem);
+    }
+    to{
+        opacity: 1;
+    }
+}
+@keyframes hero-from-top {
+    from{
+        opacity: 0;
+        transform: translateY(-8rem);
+    }
+    to{
+        opacity: 1;
+    }   
+}
+
+
+
 .arrow-image-icon{
     width: 8rem;
     height: auto;
