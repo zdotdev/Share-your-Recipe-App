@@ -342,3 +342,11 @@ body{
         transform: rotate(360deg);
     }
 }
+
+.error-message{    
+    font-weight: 700;
+    font-size: 4rem;
+    color: hsl(0, 100%, 30%);
+    margin-top: 8rem;
+    animation: hero-from-top .8s ease-in;
+}
