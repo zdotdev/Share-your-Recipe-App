@@ -32,6 +32,22 @@ export const getReceipt = async(req, res) => {
     return res.status(200).json({dishes})
 }
 
+export const getRecipeByName = async(req, res) => {
+    const dish = req.params.dishNameParam
+    let dishes
+
+    try{
+        dishes = await Dish.findOne({dishName : dish})
+    }
+    catch(err){
+        return console.log(err)
+    }
+    if(!dishes){
+        return res.status(404).json({error: "Receipt not found"})
+    }
+    return res.status(200).json({dishes})
+}
+
 export const addReceipt = async(req, res) => {
     const {dishName, dishIngredients, dishProcedure} = req.body
 
