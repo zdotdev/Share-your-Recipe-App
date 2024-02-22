@@ -18,7 +18,7 @@ async function getAllDishes(){
     try{
         const data = await fetch("http://localhost:3000/dish")
         const dish = await data.json()
-        dishContainer.innerHTML += ""
+        dishContainer.innerHTML = ""
         card(dish)
     }
     catch(err){
@@ -62,3 +62,7 @@ dishContainer.addEventListener("click", (event) => {
         window.location.href = "dish/dish.html?id=" + dishID
     }
 })
+
+window.onload = function () {
+    window.scrollTo(0, 0);
+}
