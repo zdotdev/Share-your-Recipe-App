@@ -35,7 +35,7 @@ body{
     box-shadow: 0rem 0px 2rem 0rem #654133;
 }
 .navbar.move-up{
-    animation: navbar-move-top .8s ease-out forwards;
+    animation: navbar-move-top .8s ease .4s forwards;
 }
 .navbar.normal-pos{
     animation: normal-position .4s ease-in forwards;
@@ -82,7 +82,7 @@ body{
 .search-input{
     border: none;
     border-radius: 16px;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Comic Neue','Poppins', sans-serif;
     padding-inline: 1.2rem;
     font-family: 'Gloria Hallelujah', sans-serif;
     box-shadow: 4px 4px #654133;
@@ -116,14 +116,15 @@ body{
     width: 40vw;
 }
 .hero-title{
-    font-family: 'Gloria Hallelujah', sans-serif;
+    font-family: 'Comic Neue','Gloria Hallelujah', sans-serif;
+    font-weight: 700;
     font-size: 2.8rem;
     color: hsl(17, 33%, 20%);
     margin-top: 8rem;
     animation: hero-from-top .8s ease-in;
 }
 .hero-p{
-    font-family: 'Gloria Hallelujah', sans-serif;
+    font-family: 'Comic Neue','Gloria Hallelujah', 'Poppins', sans-serif;
     text-align: center;
     color: hsl(10, 5%, 48%);
     animation: hero-from-bottom .8s ease-in;
@@ -161,9 +162,10 @@ body{
 }
 
 .hero-arrow-header{
-    font-family: 'Gloria Hallelujah', sans-serif;
+    font-family: 'Comic Neue','Gloria Hallelujah', sans-serif;
     color: hsl(10, 5%, 48%);
     font-size: 2rem;
+    text-shadow: 1px 1px 2px #dcd9d4;
 }
 .arrow-image-icon{
     width: 4rem;
@@ -204,21 +206,22 @@ body{
     box-shadow: 4px 8px 2rem #817775;
 }
 .image-one{
-    right: 18rem;
+    right: 32rem;
     animation: right .6s ease-in forwards;
 }
 .image-two{
     right: 8rem;
-    top: -42rem;
+    top: -32rem;
     animation: bottom .6s ease-in forwards;
 }
 .image-three{
+    top: -52rem;
     animation: top .6s ease-in forwards;
 }
 
 @keyframes top {
     from{
-        transform: translateY(-40rem);
+        transform: translateY(-28rem);
     }
     to{
         transform: translateY(0);
@@ -228,11 +231,11 @@ body{
 
 @keyframes bottom{
     from{
-        transform: translateY(40rem);
+        transform: translateY(10rem);
     }
     to{
         transform: translateY(0);
-        transform: rotate(-28deg);
+        transform: rotate(28deg);
     }
 }
 
@@ -242,7 +245,7 @@ body{
     }
     to{
         transform: translateX(0);
-        transform: rotate(28deg);
+        transform: rotate(-28deg);
     }
 }
 
@@ -259,7 +262,7 @@ body{
 }
 .title{
     font-size: 24px;
-    font-family: 'Gloria Hallelujah', sans-serif;
+    font-family: 'Comic Neue','Gloria Hallelujah', sans-serif;
     color: hsl(0, 0%, 100%);
     text-shadow: 2px 2px 0px #654133;
     line-height: 0;
@@ -267,10 +270,20 @@ body{
 
 /* dish */
 .h2-dish-title{
-    font-family: 'Gloria Hallelujah', sans-serif;
+    font-family: 'Comic Neue','Gloria Hallelujah', sans-serif;
     color: hsl(17, 33%, 30%);
     font-size: 32px;
     text-shadow: 0 0 20px hsl(36, 29%, 71%);
+    position: relative;
+}
+.span-notice{
+    position: absolute;
+    top: 6rem;
+    right: -4rem;
+    transform: rotate(34deg);
+    font-size: 40px;
+    opacity: 50%;
+    z-index: 10;
 }
 .dish-container{
     height: fit-content;
@@ -314,4 +327,16 @@ body{
     border-radius: 8px;
     outline: 2px solid hsl(0, 0%, 100%);
     box-shadow: 2px 2px 8px black;
+}
+.dish-name{
+    font-size: 1.8rem;
+    margin-top: .8rem;
+    margin-bottom: .4rem;
+    font-family: 'Comic Neue','Gloria Hallelujah','Poppins', sans-serif;
+}
+.card > h4{
+    font-family: 'Comic Neue','Gloria Hallelujah', 'Poppins', sans-serif;
+}
+.card > p {
+    font-family: 'Comic Neue','Gloria Hallelujah', 'Poppins', sans-serif;
 }

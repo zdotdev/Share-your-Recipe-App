@@ -6,9 +6,9 @@ function card(data){
             <img src="./public/img/chicken-adobo_008.jpeg" alt="dish-image" class="dish-image">
             <h2 class="dish-name">${dish.dishName}</h2>
             <h4>Ingredients</h4>
-            <p class="dish-ingredients">${dish.dishIngredients}...</p>
+            <p class="dish-ingredients">${dish.dishIngredients.slice(0, 50)}...<span class="hidden-dish-ingredients" style="display: none">${dish.dishIngredients}<span></p>
             <h4>Procedure</h4>
-            <p class="dish-procedure">${dish.dishProcedure.slice(0, 200)}...</p>
+            <p class="dish-procedure">${dish.dishProcedure.slice(0, 50)}...</p>
         </div>`
     });
 }
@@ -16,8 +16,8 @@ function card(data){
 async function getAllDishes(){
     try{
         const data = await fetch("http://localhost:3000/dish")
-        const dishName = await data.json()
-        card(dishName)
+        const dish = await data.json()
+        card(dish)
     }
     catch(err){
         console.log(err)
@@ -25,14 +25,8 @@ async function getAllDishes(){
 }
 getAllDishes()
 
+const dishContainer = document.getElementById("dish-container")
 window.addEventListener('scroll', function() {
-    const dishContainer = document.getElementById("dish-container")
-    if(dishContainer.querySelector(".card")){
-        console.log("true")
-    }else{
-        console.log("false");
-    }
-
     const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
     const scrollHeight = document.documentElement.scrollHeight || document.body.scrollHeight;
     const clientHeight = document.documentElement.clientHeight || window.innerHeight;
@@ -59,3 +53,15 @@ window.addEventListener('scroll', function() {
         lastScrollTop = currentScroll;
     });
 });
+
+dishContainer.addEventListener("click", (event) => {
+    const card = event.target.closest(".card")
+    if(card){
+        const dishName = card.querySelector(".dish-name").textContent
+        const dishIngredients = card.querySelector(".hidden-dish-ingredients").textContent
+        const dishProcedure = card.querySelector(".dish-procedure").textContent
+        console.log(dishName);
+        console.log(dishIngredients)
+        console.log(dishProcedure);
+    }
+})
