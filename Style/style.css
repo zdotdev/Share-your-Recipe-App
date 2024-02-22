@@ -13,7 +13,7 @@ body{
     margin: 0;
     padding: 0;
     font-size: 15px;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Comic Neue', 'Gloria Hallelujah','Poppins', sans-serif;
     overflow-x: hidden;
 }
 
@@ -82,7 +82,6 @@ body{
 .search-input{
     border: none;
     border-radius: 16px;
-    font-family: 'Comic Neue','Poppins', sans-serif;
     padding-inline: 1.2rem;
     font-family: 'Gloria Hallelujah', sans-serif;
     box-shadow: 4px 4px #654133;
@@ -116,7 +115,6 @@ body{
     width: 40vw;
 }
 .hero-title{
-    font-family: 'Comic Neue','Gloria Hallelujah', sans-serif;
     font-weight: 700;
     font-size: 2.8rem;
     color: hsl(17, 33%, 20%);
@@ -124,7 +122,6 @@ body{
     animation: hero-from-top .8s ease-in;
 }
 .hero-p{
-    font-family: 'Comic Neue','Gloria Hallelujah', 'Poppins', sans-serif;
     text-align: center;
     color: hsl(10, 5%, 48%);
     animation: hero-from-bottom .8s ease-in;
@@ -162,7 +159,6 @@ body{
 }
 
 .hero-arrow-header{
-    font-family: 'Comic Neue','Gloria Hallelujah', sans-serif;
     color: hsl(10, 5%, 48%);
     font-size: 2rem;
     text-shadow: 1px 1px 2px #dcd9d4;
@@ -189,8 +185,6 @@ body{
         transform: translateY(1.4rem);
     }
 }
-
-
 
 .image-container{
     position: relative;
@@ -256,13 +250,10 @@ body{
     width: 100%;
     padding-inline: 4rem;
     padding-block: 2rem;
-    /* background:hsla(34, 78%, 91%, 80%); */
-    /* background: hsl(10, 6%, 80%); */
     background-color: #f1f1f1;
 }
 .title{
     font-size: 24px;
-    font-family: 'Comic Neue','Gloria Hallelujah', sans-serif;
     color: hsl(0, 0%, 100%);
     text-shadow: 2px 2px 0px #654133;
     line-height: 0;
@@ -270,7 +261,6 @@ body{
 
 /* dish */
 .h2-dish-title{
-    font-family: 'Comic Neue','Gloria Hallelujah', sans-serif;
     color: hsl(17, 33%, 30%);
     font-size: 32px;
     text-shadow: 0 0 20px hsl(36, 29%, 71%);
@@ -332,11 +322,5 @@ body{
     font-size: 1.8rem;
     margin-top: .8rem;
     margin-bottom: .4rem;
-    font-family: 'Comic Neue','Gloria Hallelujah','Poppins', sans-serif;
 }
-.card > h4{
-    font-family: 'Comic Neue','Gloria Hallelujah', 'Poppins', sans-serif;
-}
-.card > p {
-    font-family: 'Comic Neue','Gloria Hallelujah', 'Poppins', sans-serif;
-}
+
