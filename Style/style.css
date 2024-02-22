@@ -295,6 +295,7 @@ body{
     border-radius: 8px;
     border-left: 4px solid hsl(38, 12%, 47%);
     opacity: 0;
+    cursor: pointer;
 }
 .card.translate{
     animation: translate .4s ease-in forwards;

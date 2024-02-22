@@ -5,11 +5,11 @@ function card(data){
         dishContainer.innerHTML += `
         <div class="card">
             <img src="./public/img/chicken-adobo_008.jpeg" alt="dish-image" class="dish-image">
-            <h2 class="dish-name">${dish.dishName}</h2>
+            <h2 class="dish-name">${dish.dishName} <span id="dish-id" style="display: none">${dish._id}</span></h2>
             <h4>Ingredients:</h4>
-            <p class="dish-ingredients">${dish.dishIngredients.slice(0, 50)}...<span id="hidden-dish-ingredients" style="display: none">${dish.dishIngredients}<span></p>
+            <p class="dish-ingredients">${dish.dishIngredients.slice(0, 50)}...</p>
             <h4>Procedure:</h4>
-            <p class="dish-procedure">${dish.dishProcedure.slice(0, 50)}...<span id="hidden-dish-procedure" style="display: none">${dish.dishProcedure}<span></p>
+            <p class="dish-procedure">${dish.dishProcedure.slice(0, 50)}...</p>
         </div>`
     });
 }
@@ -58,11 +58,7 @@ window.addEventListener('scroll', function() {
 dishContainer.addEventListener("click", (event) => {
     const card = event.target.closest(".card")
     if(card){
-        const dishName = card.querySelector(".dish-name").textContent
-        const dishIngredients = card.querySelector("#hidden-dish-ingredients").textContent
-        const dishProcedure = card.querySelector(".dish-procedure").textContent
-        console.log(dishName);
-        console.log(dishIngredients)
-        console.log(dishProcedure);
+        const dishID = card.querySelector("#dish-id").textContent
+        window.location.href = "dish/dish.html?id=" + dishID
     }
 })
