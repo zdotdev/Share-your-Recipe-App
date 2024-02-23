@@ -123,7 +123,8 @@ body{
 }
 .hero-p{
     text-align: center;
-    color: hsl(10, 5%, 48%);
+    color: hsl(17, 33%, 30%);
+    font-size: 1.4rem;
     animation: hero-from-bottom .8s ease-in;
 }
 
@@ -242,7 +243,18 @@ body{
         transform: rotate(-28deg);
     }
 }
-
+.trivia-div{
+    margin-block: 2rem;
+}
+.trivia{
+    font-size: 1.4rem;
+    color: #654133;
+    margin-block: 1.4rem;
+}
+.trivia strong{
+    font-size: 1.4rem;
+    color: #654133;
+}
 
 /* main */
 .main-dish-container{
