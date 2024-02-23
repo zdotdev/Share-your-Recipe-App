@@ -68,3 +68,41 @@ dishContainer.addEventListener("click", (event) => {
 window.onload = function () {
     window.scrollTo(0, 0);
 }
+const searchInput = document.getElementById("search-input")
+
+searchInput.addEventListener("keydown", (event) => {
+    if(event.key === "Enter"){
+        fetchDishByName(searchInput.value.charAt(0).toUpperCase() + searchInput.value.slice(1))
+        window.location.href = "#main-dish-container"
+    }
+})
+
+async function fetchDishByName(name){
+    try{
+        const data = await fetch(`http://localhost:3000/dish/dishName/${name}`)
+        const dishByName = await data.json()
+        if(dishByName.status == 404){
+            dishContainer.innerHTML = ""
+            dishContainer.innerHTML = '<h2 class="error-message">Error: No dish found. Try check your input or contact us to update dishes :(</h2>'
+        }else(
+            getDishByName(dishByName)
+        )
+        console.log(dishByName)
+    }
+    catch(err){
+        console.log(err)
+    }
+}
+
+function getDishByName(dish){
+    dishContainer.innerHTML = ""
+    dishContainer.innerHTML = `
+        <div class="card">
+            <img src="./public/img/chicken-adobo_008.jpeg" alt="dish-image" class="dish-image">
+            <h2 class="dish-name">${dish.dishes.dishName} <span id="dish-id" style="display: none">${dish._id}</span></h2>
+            <h4>Ingredients:</h4>
+            <p class="dish-ingredients">${dish.dishes.dishIngredients.slice(0, 50)}...</p>
+            <h4>Procedure:</h4>
+            <p class="dish-procedure">${dish.dishes.dishProcedure.slice(0, 50)}...</p>
+        </div>`
+}

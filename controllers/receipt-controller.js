@@ -43,7 +43,7 @@ export const getRecipeByName = async(req, res) => {
         return console.log(err)
     }
     if(!dishes){
-        return res.status(404).json({error: "Receipt not found"})
+        return res.status(404).json({error: "Receipt not found", "status" : 404})
     }
     return res.status(200).json({dishes})
 }
