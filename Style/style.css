@@ -157,6 +157,7 @@ body{
     top: -14rem;
     animation: opacity .6s ease-in;
     animation: arrow-movement .8s ease-in-out .8s infinite forwards alternate;
+    z-index: 50;
 }
 
 .hero-arrow-header{
@@ -250,6 +251,15 @@ body{
     font-size: 1.4rem;
     color: #654133;
     margin-block: 1.4rem;
+}
+.trivia.one{
+    animation: hero-from-bottom .8s ease-in;
+}
+.trivia.two{
+    animation: hero-from-bottom 1s ease-in;
+}
+.trivia.three{
+    animation: hero-from-bottom 1.2s ease-in;
 }
 .trivia strong{
     font-size: 1.4rem;

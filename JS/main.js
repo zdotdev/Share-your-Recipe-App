@@ -4,7 +4,7 @@ function card(data){
     Object.values(data.dishes).forEach(dish => {
         dishContainer.innerHTML += `
         <div class="card">
-            <img src="./public/img/chicken-adobo_008.jpeg" alt="dish-image" class="dish-image">
+            <img src="${dish.dishImage}" alt="dish-image" class="dish-image">
             <h2 class="dish-name">${dish.dishName} <span id="dish-id" style="display: none">${dish._id}</span></h2>
             <h4>Ingredients:</h4>
             <p class="dish-ingredients">${dish.dishIngredients.slice(0, 50)}...</p>
@@ -14,12 +14,21 @@ function card(data){
     });
 }
 
+function imageDisplay(data){
+    document.getElementById("image-container").innerHTML += `
+    <img src="${data.dishes[0].dishImage}" alt="food image" class="food-image image-one">
+    <img src="${data.dishes[1].dishImage}" alt="food image" class="food-image image-two">
+    <img src="${data.dishes[2].dishImage}" alt="food image" class="food-image image-three">
+    `
+}
+
 async function getAllDishes(){
     try{
         const data = await fetch("http://localhost:3000/dish")
         const dish = await data.json()
         dishContainer.innerHTML = ""
         card(dish)
+        imageDisplay(dish)
     }
     catch(err){
         console.log(err)

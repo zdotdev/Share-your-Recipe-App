@@ -17,7 +17,7 @@ function showDish(data){
     fullDishDetails.innerHTML =`
         <div class="full-card-dish-details">
             <a class="material-symbols-outlined close-button" id="close-button">Keyboard_Return</a>
-            <img src="../public/img/chicken-adobo_008.jpeg" alt="full-dish-image-detail" class="full-dish-image-detail">
+            <img src="${data.dishes.dishImage}" alt="full-dish-image-detail" class="full-dish-image-detail">
             <h2 class="full-dish-name-detail">${data.dishes.dishName}</h2>
             <h4>Ingredients:</h4>
             <p class="full-dish-ingredients-detail">${data.dishes.dishIngredients}</p>
