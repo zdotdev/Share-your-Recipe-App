@@ -24,7 +24,7 @@ async function getAllDishes(){
     catch(err){
         console.log(err)
         dishContainer.innerHTML = ""
-        dishContainer.innerHTML += '<h2 class="error-message">Connection error: Failed to fetch data :(</h2>'
+        dishContainer.innerHTML += '<h2 class="error-message">Server connection error: Failed to fetch data :(</h2>'
     }
 }
 getAllDishes()
