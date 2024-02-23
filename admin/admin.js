@@ -1,10 +1,17 @@
+const reader = new FileReader();
 async function editDish(body, id){
-    const data = await fetch(`http://localhost:3000/dish/editReceipt/${id}`, {
-        method: "PUT",
-        headers: {"Content-Type": "application/json"},
-        body: JSON.stringify(body)
-    })
-    console.log(await data.json());
+    try{
+        const data = await fetch(`http://localhost:3000/dish/editReceipt/${id}`, {
+            method: "PUT",
+            headers: {"Content-Type": "application/json"},
+            body: JSON.stringify(body)
+        })
+        console.log(await data.json());
+        window.location.reload()
+    }
+    catch(err){
+        console.log(err)
+    }
 }
 
 async function deleteDish(id){
@@ -15,6 +22,7 @@ async function deleteDish(id){
             body: ""
         })
         console.log(await data.json())
+        window.location.reload()
     }
     catch(err){
         console.log(err)
@@ -29,6 +37,7 @@ async function addDish(newDish){
             body: JSON.stringify(newDish)
         })
         console.log(await data.json())
+        window.location.reload()
     }
     catch(err){
         console.log(err)
@@ -55,6 +64,7 @@ function card(data){
     Object.values(data.dishes).forEach(dish => {
         document.getElementById("data").innerHTML += `
         <div class="dish-div">
+            <img src="${dish.dishImage}" alt="dish image" class="admin-image">
             <h2>${dish.dishName}</h2>
             <h3>${dish._id}</h3>
             <p>${dish.dishIngredients}</p>
@@ -78,27 +88,40 @@ async function getAllDish(){
 getAllDish()
 
 document.getElementById("edit-dish-button").addEventListener("click", () => {
+    const imageFile = document.querySelector("#edit-dish-image").files[0]
     const dishID = document.getElementById("edit-dish-ID").value
-    const data = {
-        dishName: document.getElementById("edit-dish-name").value,
-        dishIngredients: editDishIngredients.value,
-        dishProcedure: editDishProcedure.value
+    reader.onloadend = function() {
+        const base64String = reader.result
+        const data = {
+            dishName: document.getElementById("edit-dish-name").value,
+            dishIngredients: editDishIngredients.value,
+            dishProcedure: editDishProcedure.value,
+            dishImage : base64String
+        }
+        editDish(data, dishID)
     }
-    editDish(data, dishID)
+    reader.readAsDataURL(imageFile)
 })
 
 document.getElementById("delete-dish-button").addEventListener("click", () => {
     const dishID = document.getElementById("delete-dish-ID").value
     deleteDish(dishID)
+    window.location.reload
 })
 
 document.getElementById("add-dish-button").addEventListener("click", () => {
-    const data = {
-        dishName: document.getElementById("add-dish-name").value,
-        dishIngredients: addDishIngredients.value,
-        dishProcedure: addDishProcedure.value
-    }
-    addDish(data)
+    const imageFile = document.querySelector("#add-dish-image").files[0];
+    reader.onloadend = function () {
+        const base64String = reader.result;
+        const data = {
+            dishName: document.getElementById("add-dish-name").value,
+            dishIngredients: addDishIngredients.value,
+            dishProcedure: addDishProcedure.value,
+            dishImage : base64String
+        }
+        addDish(data)
+    };
+    reader.readAsDataURL(imageFile);
 })
 
 const addDishIngredients = document.getElementById("add-dish-ingredients")

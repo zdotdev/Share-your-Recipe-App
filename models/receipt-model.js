@@ -12,6 +12,10 @@ const receiptSchema = new mongoose.Schema({
     dishProcedure: {
         type: String,
         required: true
+    },
+    dishImage: {
+        type: String,
+        required : true
     }
 })
 

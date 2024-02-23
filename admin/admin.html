@@ -11,17 +11,19 @@
     <section>
         <div class="add-dish-area">
             <label for="add-dish">Add Dish</label>
-            <input type="text" name="add-dish" id="add-dish-name" placeholder="Dish name">
-            <textarea name="add-dish" id="add-dish-ingredients" cols="30" rows="10" placeholder="Add dish ingredients here"></textarea>
-            <textarea name="add-dish" id="add-dish-procedure" cols="30" rows="10" placeholder="Add dish procedure here"></textarea>
+            <input type="text" name="add-dish" id="add-dish-name" placeholder="Dish name" required>
+            <textarea name="add-dish" id="add-dish-ingredients" cols="30" rows="10" placeholder="Add dish ingredients here" required></textarea>
+            <textarea name="add-dish" id="add-dish-procedure" cols="30" rows="10" placeholder="Add dish procedure here" required></textarea>
+            <input type="file" id="add-dish-image" name="image" accept="image/*" required/>
             <button id="add-dish-button">Add Recipe</button>
         </div>
         <div class="edit-dish-area">
             <label for="edit-dish">Edit Dish</label>
-            <input type="text" name="edit-dish-ID" id="edit-dish-ID" placeholder="Dish ID">
-            <input type="text" name="edit-dish" id="edit-dish-name" placeholder="Edit dish name">
-            <textarea name="edit-dish" id="edit-dish-ingredients" cols="30" rows="10" placeholder="Edit dish ingredients here"></textarea>
-            <textarea name="edit-dish" id="edit-dish-procedure" cols="30" rows="10" placeholder="Edit dish procedure here"></textarea>
+            <input type="text" name="edit-dish-ID" id="edit-dish-ID" placeholder="Dish ID" required>
+            <input type="text" name="edit-dish" id="edit-dish-name" placeholder="Edit dish name" required>
+            <textarea name="edit-dish" id="edit-dish-ingredients" cols="30" rows="10" placeholder="Edit dish ingredients here" required></textarea>
+            <textarea name="edit-dish" id="edit-dish-procedure" cols="30" rows="10" placeholder="Edit dish procedure here" required></textarea>
+            <input type="file" id="edit-dish-image" name="image" accept="image/*" required />
             <button id="edit-dish-button">Edit Recipe</button>
         </div>
         <div class="delete-dish-area">

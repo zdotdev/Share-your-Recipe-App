@@ -49,12 +49,13 @@ export const getRecipeByName = async(req, res) => {
 }
 
 export const addReceipt = async(req, res) => {
-    const {dishName, dishIngredients, dishProcedure} = req.body
+    const {dishName, dishIngredients, dishProcedure, dishImage} = req.body
 
     let dishes = new Dish({
         dishName,
         dishIngredients,
-        dishProcedure
+        dishProcedure,
+        dishImage
     })
 
     try{
@@ -67,7 +68,7 @@ export const addReceipt = async(req, res) => {
 }
 
 export const editReceipt = async(req, res) => {
-    const {dishName, dishIngredients, dishProcedure} = req.body
+    const {dishName, dishIngredients, dishProcedure, dishImage} = req.body
     const id = req.params.id
     let dishes
 
@@ -75,7 +76,8 @@ export const editReceipt = async(req, res) => {
         dishes = await Dish.findByIdAndUpdate(id, {
             dishName,
             dishIngredients,
-            dishProcedure
+            dishProcedure,
+            dishImage
         })
     }
     catch(err){

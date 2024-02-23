@@ -80,3 +80,7 @@ input{
         transform: rotate(360deg);
     }
 }
+.admin-image{
+    width: 20rem;
+    height: 20rem;
+}
