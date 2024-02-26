@@ -5,7 +5,7 @@ function card(data){
         dishContainer.innerHTML += `
         <div class="card">
             <img src="${dish.dishImage}" alt="dish-image" class="dish-image">
-            <h2 class="dish-name">${dish.dishName} <span id="dish-id" style="display: none">${dish._id}</span></h2>
+            <h2 class="dish-name" data-id="${dish._id}">${dish.dishName}</h2>
             <h4>Ingredients:</h4>
             <p class="dish-ingredients">${dish.dishIngredients.slice(0, 50)}...</p>
             <h4>Procedure:</h4>
@@ -69,7 +69,7 @@ window.addEventListener('scroll', function() {
 dishContainer.addEventListener("click", (event) => {
     const card = event.target.closest(".card")
     if(card){
-        const dishID = card.querySelector("#dish-id").textContent
+        const dishID = card.querySelector(".dish-name").dataset.id
         window.location.href = "dish/dish.html?id=" + dishID
     }
 })
@@ -108,7 +108,7 @@ function getDishByName(dish){
     dishContainer.innerHTML = `
         <div class="card">
             <img src="./public/img/chicken-adobo_008.jpeg" alt="dish-image" class="dish-image">
-            <h2 class="dish-name">${dish.dishes.dishName} <span id="dish-id" style="display: none">${dish._id}</span></h2>
+            <h2 class="dish-name" data-id="${dish._id}">${dish.dishes.dishName}</h2>
             <h4>Ingredients:</h4>
             <p class="dish-ingredients">${dish.dishes.dishIngredients.slice(0, 50)}...</p>
             <h4>Procedure:</h4>
