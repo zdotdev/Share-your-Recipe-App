@@ -142,7 +142,7 @@ function getDishByName (dish) {
             <img src="${
               dish.dishes.dishImage
             }" alt="dish-image" class="dish-image">
-            <h2 class="dish-name" data-id="${dish._id}">${
+            <h2 class="dish-name" data-id="${dish.dishes._id}">${
     dish.dishes.dishName
   }</h2>
             <h4>Ingredients:</h4>
