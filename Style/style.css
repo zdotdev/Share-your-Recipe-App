@@ -415,3 +415,63 @@ body{
     width: 2.8rem;
     height: auto;
 }
+
+/* dialog */
+dialog{
+    position: absolute;
+    border: none;
+    width: fit-content;
+    height: fit-content;
+    background-color: transparent;
+    z-index: 40;
+    top: 100%;
+    overflow-x: hidden;
+}
+dialog:focus{
+    border: none;
+    outline: none;
+}
+.dialog-div{
+    margin: 2rem;
+    width: 100vw;
+    height: fit-content;
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.full-card-dish-details{
+    background-color: #817775;
+    padding: 2rem;
+    border-radius: 1.8rem;
+    border: .2rem solid hsla(0, 0%, 90%, 80%);
+}
+.full-dish-image-detail{
+    height: 28rem;
+    width: 36rem;
+    border-radius: 1.4rem;
+    border: .2rem solid #dcd9d4;
+}
+.full-card-dish-details > h2{
+    margin-block: 1.2rem;
+    color: #f1f1f1;
+    font-size: 2.8rem;
+}
+.full-card-dish-details > h4{
+    margin-block: .8rem;
+    color: #f1f1f1;
+}
+.full-card-dish-details > p {
+    color: #f1f1f1;
+}
+.close-button{
+    color: #f1f1f1;
+    position: absolute;
+    right: 38rem;
+    top: 3.2rem;
+    background-color: #654133;
+    border-radius: 50%;
+    padding: 1.2rem;
+    border: .2rem solid white;
+    cursor: pointer;
+}
