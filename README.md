@@ -169,7 +169,7 @@ Project Link: [https://github.com/zdotdev/Share-your-Recipe-App](https://github.
 [stars-shield]: https://img.shields.io/github/stars/zdotdev/Share-your-Recipe-App.svg?style=for-the-badge
 [stars-url]: https://github.com/zdotdev/Share-your-Recipe-App/stargazers
 [issues-shield]: https://img.shields.io/github/issues/zdotdev/Share-your-Recipe-App.svg?style=for-the-badge
-[license-url]: https://github.com/zdotdev/Share-your-Reipe-App/blob/master/LICENSE
+[license-url]: https://github.com/zdotdev/Share-your-Recipe-App/blob/main/LICENSE
 [issues-url]: https://github.com/zdotdev/Share-your-Recipe-App/issues
 [license-shield]: https://img.shields.io/github/license/Share-your-Recipe-App/repo_name.svg?style=for-the-badge
 [license-url]: https://github.com/zdotdev/Share-your-Recipe-App/blob/main/LICENSE
