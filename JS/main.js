@@ -83,25 +83,50 @@ dishContainer.addEventListener('click', async event => {
     const data = await fetch(`http://localhost:3000/dish/${id}`)
     const recipe = await data.json()
 
-    document.querySelector('.dialog-div').innerHTML = `
-        <div class="full-card-dish-details">
-            <a class="material-symbols-outlined close-button" id="close-button">Keyboard_Return</a>
-            <img src="${recipe.dishes.dishImage}" alt="full-dish-image-detail" class="full-dish-image-detail">
-            <h2 class="full-dish-name-detail">${recipe.dishes.dishName}</h2>
-            <h4>Ingredients:</h4>
-            <p class="full-dish-ingredients-detail">${recipe.dishes.dishIngredients}</p>
-            <h4>Procedure:</h4>
-            <p class="full-dish-procedure-detail">${recipe.dishes.dishProcedure}</p>
-        </div>
+    const fragment = document.createDocumentFragment()
+
+    const fullCardDetailsDiv = document.createElement('div')
+    fullCardDetailsDiv.classList.add('full-card-dish-details')
+
+    fullCardDetailsDiv.innerHTML = `
+      <a class="material-symbols-outlined close-button" id="close-button">Keyboard_Return</a>
+      <img src="${recipe.dishes.dishImage}" alt="full-dish-image-detail" class="full-dish-image-detail">
+      <h2 class="full-dish-name-detail">${recipe.dishes.dishName}</h2>
+      <h4>Ingredients:</h4>
+      <ul class="full-dish-ingredients-detail">
     `
+
+    recipe.dishes.dishIngredients.split(',').forEach(e => {
+      const li = document.createElement('li')
+      li.textContent = e.trim()
+      fullCardDetailsDiv
+        .querySelector('.full-dish-ingredients-detail')
+        .appendChild(li)
+    })
+
+    fullCardDetailsDiv.innerHTML += `</ul>
+      <h4>Procedure:</h4>
+      <p class="full-dish-procedure-detail">${recipe.dishes.dishProcedure}</p>
+    `
+
+    fragment.appendChild(fullCardDetailsDiv)
+
+    const dialogDiv = document.querySelector('.dialog-div')
+    dialogDiv.innerHTML = ''
+    dialogDiv.appendChild(fragment)
+
     document.querySelector('[data-recipe-modal]').showModal()
+    document.querySelector('[data-recipe-modal]').style.display = 'flex'
+    document.querySelector('html').style.overflow = 'hidden'
   }
 })
+
 document
   .querySelector('[data-recipe-modal]')
   .addEventListener('click', event => {
     if (event.target.closest('#close-button')) {
-      console.log('click')
+      document.querySelector('[data-recipe-modal]').style.display = 'none'
+      document.querySelector('html').style.overflow = 'auto'
       document.querySelector('[data-recipe-modal]').close()
     }
   })

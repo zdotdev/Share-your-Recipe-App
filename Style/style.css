@@ -418,63 +418,135 @@ body{
 
 /* dialog */
 dialog{
-    position: absolute;
-    border: none;
-    width: fit-content;
-    height: fit-content;
-    background-color: transparent;
-    z-index: 40;
-    top: 100%;
-    overflow-x: hidden;
+    max-width: none;
+    max-height: none;
+    width: 58%;
+    height: 80%;
+    display: none;
+    justify-content: center;
+    align-self: center;
+    justify-self: center;
+    padding: 2rem;
+    border-radius: 1.2rem;
+    border: 1.2rem solid #cab99f;
+    background-color: #f1f1f1;
+    animation: opacity .2s ease-in forwards;
 }
+
+@keyframes opacity {
+    from{
+        transform: translateY(20rem);
+    }
+}
+
 dialog::backdrop{
     background-color: hsla(10, 5%, 48%, 60%);
 }
 dialog:focus{
-    border: none;
     outline: none;
 }
-.dialog-div{
-    margin: 2rem;
-    width: 100vw;
-    height: fit-content;
-    background-color: transparent;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
 .full-card-dish-details{
-    background-color: #817775;
-    padding: 2rem;
-    border-radius: 1.8rem;
-    border: .2rem solid hsla(0, 0%, 90%, 80%);
+    position: relative;
+    display: flex;
+    flex-direction: column;
 }
+
+dialog::-webkit-scrollbar {
+  height: 4px;
+  width: 8px;
+  position: fixed;
+}
+dialog::-webkit-scrollbar-track {
+  border-radius: 5px;
+  height: 2px;
+  background-color: hsla(190, 23%, 90%, 0%);
+}
+
+dialog::-webkit-scrollbar-track:hover {
+  background-color: #B8C0C2;
+}
+
+dialog::-webkit-scrollbar-track:active {
+  background-color: #B8C0C2;
+}
+
+dialog::-webkit-scrollbar-thumb {
+  border-radius: 5px;
+  background-color: #654133;
+}
+
+dialog::-webkit-scrollbar-thumb:hover {
+  background-color: #817775;
+}
+
+dialog::-webkit-scrollbar-thumb:active {
+  background-color: #cab99f;
+}
+
 .full-dish-image-detail{
-    height: 28rem;
-    width: 36rem;
-    border-radius: 1.4rem;
+    width: 48rem;
+    height: 32rem;
+    display: flex;
+    align-self: center;
     border: .2rem solid #dcd9d4;
+    border-radius: 1rem;
+    box-shadow: .8rem .4rem 2rem #654133;
 }
 .full-card-dish-details > h2{
-    margin-block: 1.2rem;
-    color: #f1f1f1;
-    font-size: 2.8rem;
+    font-size: 4rem;
+    font-weight: 700;
+    display: flex;
+    align-self: center;
+    margin-top: 1.2rem;
+    margin-bottom: .8rem;
+}
+.full-dish-ingredients-detail > li{
+    display: flex;
+    padding-block: .2rem;
+    font-weight: 700;
 }
 .full-card-dish-details > h4{
-    margin-block: .8rem;
-    color: #f1f1f1;
+    font-size: 2.4rem;
+    margin-top: 1.2rem;
+    margin-bottom: .8rem;
 }
 .full-card-dish-details > p {
-    color: #f1f1f1;
+    margin-bottom: 2rem;
+    font-size: 1.2rem;
+    text-align: center;
+    line-height: 2;
 }
 .close-button{
-    color: #f1f1f1;
-    position: absolute;
-    right: 38rem;
-    top: 3.2rem;
-    background-color: #654133;
-    border-radius: 50%;
-    padding: 1.2rem;
-    border: .2rem solid white;
     cursor: pointer;
+    position: absolute;
+}
+
+html::-webkit-scrollbar {
+  height: 10px;
+  width: 10px;
+}
+html::-webkit-scrollbar-track {
+  border-radius: 5px;
+  background-color: #DFE9EB;
+}
+
+html::-webkit-scrollbar-track:hover {
+  background-color: #B8C0C2;
+}
+
+html::-webkit-scrollbar-track:active {
+  background-color: #B8C0C2;
+}
+
+html::-webkit-scrollbar-thumb {
+  border-radius: 5px;
+  background-color: #654133;
+}
+
+html::-webkit-scrollbar-thumb:hover {
+  background-color: #cab99f;
+}
+
+html::-webkit-scrollbar-thumb:active {
+  background-color: #B8C0C2;
 }
