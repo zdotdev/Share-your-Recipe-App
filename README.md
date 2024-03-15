@@ -171,7 +171,7 @@ Project Link: [https://github.com/zdotdev/Share-your-Recipe-App](https://github.
 [issues-shield]: https://img.shields.io/github/issues/zdotdev/Share-your-Recipe-App.svg?style=for-the-badge
 [license-url]: https://github.com/zdotdev/Share-your-Recipe-App/blob/main/LICENSE
 [issues-url]: https://github.com/zdotdev/Share-your-Recipe-App/issues
-[license-shield]: https://img.shields.io/github/license/Share-your-Recipe-App/repo_name.svg?style=for-the-badge
+[license-shield]: https://img.shields.io/github/license/zdotdev/Share-your-Recipe-App.svg?style=for-the-badge
 [license-url]: https://github.com/zdotdev/Share-your-Recipe-App/blob/main/LICENSE
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://www.linkedin.com/in/zedrick-ragas-19a677286/
